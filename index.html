@@ -1,0 +1,119 @@
+<html>
+	<head>
+		<link href='https://fonts.googleapis.com/css?family=Alex Brush' rel='stylesheet'>
+		<style>
+			.header{
+			 width: 60%;
+			 margin: auto;
+			 padding: 10px;
+			 text-align: center;
+			 font-family: "Alex Brush";
+			 font-size: 50px;
+			 /*border: 3px solid #73AD21;*/
+			}
+			
+			.animgif{
+			 display: block;
+			 margin-left: auto;
+			 margin-right: auto;
+			 /*border: 3px solid #73AD21;*/
+			 border-radius: 20px;
+             max-height:50%
+			}
+			
+			.btndiv
+			{
+			 display: flex;
+			 justify-content: center;
+			}
+			
+			#yesbtn
+			{
+			 /*background-color: #04AA6D;*/
+			 font-size: 20px;
+			 border-radius: 8px;
+			 border: 2px solid #04AA6D;
+			 transition-duration: 0.4s;
+			 width: 50px;
+			 height: 50px;
+			 margin-right:16px
+			}
+			#yesbtn:hover {
+			  background-color: #04AA6D; /* Green */
+			  color: white;
+			  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+			}
+			#nobtn
+			{
+			 /*background-color: #f44336;*/
+			 font-size: 20px;
+			 border-radius: 8px;
+			 border: 2px solid #f44336;
+			 transition-duration: 0.4s;
+			 height: 50px;
+			 margin-right:16px
+			}
+			#nobtn:hover {
+			  background-color: #f44336; /* Red */
+			  color: white;
+			  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+			}
+		</style>
+	</head>
+	
+	<body>
+		<h1 class="header" id="h1">Will you be my Valentine?</h1>
+		<img src="giphy.gif" alt="Couple Dancing" class="animgif" id="firstimg">
+		</br>
+		</br>
+		<div class="btndiv" id="btndivid">
+			<button type="button" id="yesbtn">Yes</button>
+			<button type="button" id="nobtn">No</button>
+		</div>
+		<script>
+			var h1 = document.getElementById("h1");
+			var img1 = document.getElementById("firstimg");
+			var ybtn = document.getElementById("yesbtn");
+			var nbtn = document.getElementById("nobtn");
+			var count = 0;
+			ybtn.addEventListener("click", function(){ h1.innerText=""; img1.setAttribute("src","yesbunnygif.gif"); ybtn.remove(); nbtn.remove() });
+			nbtn.addEventListener("click", function(){ 
+				count+=1
+				switch(count){
+					case 1:
+					ybtn.style.height="75px";
+					ybtn.style.width="75px";
+					nbtn.innerText="Think Again";
+					break;
+					case 2:
+					ybtn.style.height="100px";
+					ybtn.style.width="100px";
+					nbtn.innerText="Don't you have heart?";
+					break;
+					case 3:
+					ybtn.style.height="125px";
+					ybtn.style.width="125px";
+					nbtn.innerText="I am not that scary";
+					break;
+					case 4:
+					ybtn.style.height="150px";
+					ybtn.style.width="150px";
+					nbtn.innerText="I promise I won't bite";
+					break;
+					case 5:
+					ybtn.style.height="175px";
+					ybtn.style.width="175px";
+					nbtn.innerText="How can you be so ruthless? :\(";
+					break;
+					case 6:
+					ybtn.style.height="200px";
+					ybtn.style.width="200px";
+					nbtn.remove();
+					break;
+					default:
+					break;
+				}
+			});
+		</script>
+	</body>
+</html>
